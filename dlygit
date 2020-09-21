@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# This is a daily git push request
+branch=$(date +%m_%d_%Y_%H%M) 
+
+# create a new branch
+git branch $branch
+
+# switch to new branch
+git checkout $branch
+
+# add recent changes to the git staing area
+git add .
+
+# provide email/name
+git config user.email "kerimyurtbay@gmail.com"
+git config user.name "kyurt"
+
+# commit changes
+git commit -m $branch
+
+# push changes to remote fork
+git push origin $branch
+
+
+
+
+
